@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דף מורה</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="navbar"></header>
+  <main class="page">
+    <div class="page-title">
+      <h1>ניהול מבחנים</h1>
+      <button id="seedBtn" class="btn">הוסף דוגמאות</button>
+    </div>
+
+    <section class="grid two">
+      <form id="examForm" class="panel form">
+        <h2>יצירת מבחן</h2>
+        <input type="hidden" name="id">
+        <label>שם המבחן <input name="title" required></label>
+        <label>תיאור <textarea name="description" rows="3" required></textarea></label>
+        <label>קטגוריה <input name="category" required></label>
+        <label>משך זמן בדקות <input name="duration" type="number" min="1" value="30" required></label>
+        <button class="btn primary" type="submit">שמירת מבחן</button>
+      </form>
+
+      <section class="panel">
+        <h2>המבחנים שלי</h2>
+        <div id="examList" class="list"></div>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="js/app/teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+:root {
+  --bg: #f4f7fb;
+  --text: #172033;
+  --muted: #657089;
+  --panel: #ffffff;
+  --border: #d9e0ec;
+  --primary: #136f63;
+  --primary-dark: #0e5149;
+  --danger: #b42318;
+  --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--primary); text-decoration: none; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 28px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.brand { font-weight: 700; color: var(--text); }
+.nav-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 28px auto;
+}
+
+.narrow { width: min(560px, calc(100% - 32px)); }
+
+.hero {
+  padding: 48px;
+  background: linear-gradient(135deg, #ffffff, #e8f4f1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.hero h1 { margin: 0 0 10px; font-size: clamp(30px, 5vw, 54px); }
+.hero p, .panel p { color: var(--muted); line-height: 1.6; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.grid { display: grid; gap: 20px; }
+.grid.two { grid-template-columns: minmax(280px, 420px) 1fr; }
+.page-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+
+.form { display: grid; gap: 14px; }
+.form label { display: grid; gap: 6px; font-weight: 700; }
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 12px;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+.btn.primary:hover { background: var(--primary-dark); }
+.btn.danger { color: var(--danger); border-color: #f1b3ad; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+
+.list { display: grid; gap: 12px; }
+.item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfcfe;
+}
+
+.item-header { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.item h3 { margin: 0 0 6px; }
+.item p { margin: 4px 0; }
+.item-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+.search-row { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(150px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.stats article { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 20px; box-shadow: var(--shadow); }
+.stats span { display: block; font-size: 34px; font-weight: 800; }
+.stats small { color: var(--muted); }
+
+.question { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.question:last-child { border-bottom: 0; }
+.options { display: grid; gap: 8px; margin-top: 10px; }
+.option { display: flex; gap: 8px; align-items: center; font-weight: 400; }
+.message { margin-top: 12px; padding: 12px; border-radius: 8px; background: #e8f4f1; color: var(--primary-dark); }
+.message.error { background: #fff0ed; color: var(--danger); }
+.hidden { display: none; }
+.timer { font-size: 22px; font-weight: 800; color: var(--primary); }
+
+body.dark {
+  --bg: #111827;
+  --text: #f9fafb;
+  --muted: #cbd5e1;
+  --panel: #1f2937;
+  --border: #374151;
+  --shadow: none;
+}
+
+body.dark input, body.dark textarea, body.dark select,
+body.dark .btn, body.dark .item { background: #111827; color: var(--text); }
+
+@media (max-width: 760px) {
+  .grid.two, .search-row { grid-template-columns: 1fr; }
+  .topbar, .page-title { align-items: stretch; flex-direction: column; }
+  .hero { padding: 28px; }
+}

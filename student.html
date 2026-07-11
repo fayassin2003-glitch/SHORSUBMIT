@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דף סטודנט</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="navbar"></header>
+  <main class="page">
+    <div class="page-title">
+      <h1>אזור סטודנט</h1>
+      <a class="btn primary" href="search.html">חיפוש מבחן</a>
+    </div>
+    <section class="stats">
+      <article><span id="doneCount">0</span><small>מבחנים שבוצעו</small></article>
+      <article><span id="averageScore">0</span><small>ממוצע ציונים</small></article>
+    </section>
+    <section class="panel">
+      <h2>היסטוריית מבחנים</h2>
+      <div id="historyList" class="list"></div>
+    </section>
+  </main>
+  <script type="module" src="js/app/student.js"></script>
+</body>
+</html>

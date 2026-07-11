@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פרטי מבחן</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="navbar"></header>
+  <main class="page">
+    <section class="panel">
+      <div class="page-title">
+        <div>
+          <h1 id="examTitle">פרטי מבחן</h1>
+          <p id="examMeta"></p>
+        </div>
+        <a class="btn" href="teacher.html">חזרה</a>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <form id="questionForm" class="panel form">
+        <h2>הוספת שאלה</h2>
+        <input type="hidden" name="questionId">
+        <label>שאלה <textarea name="text" rows="3" required></textarea></label>
+        <label>תשובה א <input name="option0" required></label>
+        <label>תשובה ב <input name="option1" required></label>
+        <label>תשובה ג <input name="option2" required></label>
+        <label>תשובה ד <input name="option3" required></label>
+        <label>תשובה נכונה
+          <select name="correctIndex">
+            <option value="0">א</option>
+            <option value="1">ב</option>
+            <option value="2">ג</option>
+            <option value="3">ד</option>
+          </select>
+        </label>
+        <label>רמת קושי
+          <select name="difficulty">
+            <option value="easy">קל</option>
+            <option value="medium">בינוני</option>
+            <option value="hard">קשה</option>
+          </select>
+        </label>
+        <button class="btn primary" type="submit">שמירת שאלה</button>
+      </form>
+
+      <section class="panel">
+        <h2>שאלות</h2>
+        <div id="questionList" class="list"></div>
+      </section>
+    </section>
+
+    <section class="panel">
+      <h2>תוצאות סטודנטים</h2>
+      <div id="resultList" class="list"></div>
+    </section>
+  </main>
+  <script type="module" src="js/app/exam_details.js"></script>
+</body>
+</html>
