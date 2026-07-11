@@ -13,7 +13,7 @@
 * { box-sizing: border-box; }
 
 body {
-  margin: 0;
+  margin: 1px;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -46,7 +46,7 @@ a { color: var(--primary); text-decoration: none; }
 
 .hero {
   padding: 48px;
-  background: linear-gradient(135deg, #ffffff, #e8f4f1);
+  background: linear-gradient(135deg, #e0a3a3, #e7b4d0);
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: var(--shadow);
